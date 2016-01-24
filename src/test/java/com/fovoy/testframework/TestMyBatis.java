@@ -22,7 +22,7 @@ public class TestMyBatis {
 	private static Logger logger = Logger.getLogger(TestMyBatis.class);
 //	private ApplicationContext ac = null;
 	@Resource
-	private IUserService userService = null;
+	private IUserService userService;
 
 //	@Before
 //	public void before() {
@@ -32,9 +32,11 @@ public class TestMyBatis {
 
 	@Test
 	public void test1() {
-		User user = userService.getUserById(1);
+		User user1 = userService.getUserById(1);
+		User user2 = userService.getUserByUserName("fovoy");
 		// System.out.println(user.getUserName());
 		// logger.info("值："+user.getUserName());
-		logger.info(JSON.toJSONString(user));
+		logger.info(JSON.toJSONString(user1));
+		logger.info(JSON.toJSONString(user2));
 	}
 }

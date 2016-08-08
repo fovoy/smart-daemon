@@ -4,7 +4,6 @@ package com.fovoy.controller;
 import com.fovoy.model.User;
 import com.fovoy.service.IUserService;
 import org.springframework.stereotype.Controller;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,8 +13,8 @@ import javax.annotation.Resource;
 /**
  * Created by james on 16/1/24.
  */
-@ContextConfiguration(locations = {"classpath:spring-datasource.xml"})
 @Controller
+@RequestMapping(value = "/Login")
 public class LoginController {
 
     @Resource

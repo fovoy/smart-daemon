@@ -1,9 +1,8 @@
 package com.fovoy.controller;
 
 
-import com.fovoy.pojo.User;
+import com.fovoy.model.User;
 import com.fovoy.service.IUserService;
-import com.sun.tracing.dtrace.ModuleAttributes;
 import org.springframework.stereotype.Controller;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,13 +10,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * Created by james on 16/1/24.
  */
-@ContextConfiguration(locations = {"classpath:spring-mybatis.xml"})
+@ContextConfiguration(locations = {"classpath:spring-datasource.xml"})
 @Controller
 public class LoginController {
 

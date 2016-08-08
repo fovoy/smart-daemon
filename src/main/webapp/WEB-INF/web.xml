@@ -7,7 +7,7 @@
 	<!-- Spring和mybatis的配置文件 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:spring-mybatis.xml</param-value>
+		<param-value>classpath:spring-config.xml</param-value>
 	</context-param>
 	<!-- 编码过滤器 -->
 	<filter>
@@ -43,7 +43,7 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath:spring-mvc.xml</param-value>
+			<param-value>classpath:spring/spring-mvc.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 		<async-supported>true</async-supported>
@@ -53,11 +53,11 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
-	<!--<serrvlet-mapping>&ndash;&gt;-->
+	<!--<serrvlet-mybatis>&ndash;&gt;-->
 		<!--<servlet-name>SpringMVC</servlet-name>-->
 		<!--&lt;!&ndash; 此处可以可以配置成*.do，对应struts的后缀习惯 &ndash;&gt;-->
 		<!--<url-pattern>/</url-pattern>-->
-	<!--</servlet-mapping>-->
+	<!--</servlet-mybatis>-->
 	<welcome-file-list>
 		<welcome-file>pages/showUser.jsp</welcome-file>
 	</welcome-file-list>

@@ -1,6 +1,6 @@
 package com.fovoy.service;
 
-import com.fovoy.pojo.User;
+import com.fovoy.model.User;
 
 public interface IUserService {
 	public User getUserById(int userId);

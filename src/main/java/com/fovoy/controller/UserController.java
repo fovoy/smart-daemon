@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.fovoy.pojo.User;
+import com.fovoy.model.User;
 import com.fovoy.service.IUserService;
 
 @Controller

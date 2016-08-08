@@ -1,6 +1,6 @@
 package com.fovoy.dao;
 
-import com.fovoy.pojo.User;
+import com.fovoy.model.User;
 
 public interface IUserDao {
     int deleteByPrimaryKey(Integer id);

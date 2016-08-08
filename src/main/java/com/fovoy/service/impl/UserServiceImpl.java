@@ -5,7 +5,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.fovoy.dao.IUserDao;
-import com.fovoy.pojo.User;
+import com.fovoy.model.User;
 import com.fovoy.service.IUserService;
 
 @Service("userService")

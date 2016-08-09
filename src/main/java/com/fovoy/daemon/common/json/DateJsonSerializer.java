@@ -1,4 +1,4 @@
-package com.fovoy.common.json;
+package com.fovoy.daemon.common.json;
 
 import org.apache.commons.lang3.time.FastDateFormat;
 import org.codehaus.jackson.JsonGenerator;

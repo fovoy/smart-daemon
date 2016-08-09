@@ -1,6 +1,6 @@
-package com.fovoy.common.util;
+package com.fovoy.daemon.common.util;
 
-import com.fovoy.common.json.*;
+import com.fovoy.daemon.common.json.*;
 import org.codehaus.jackson.JsonParser;
 import org.codehaus.jackson.Version;
 import org.codehaus.jackson.map.ObjectMapper;

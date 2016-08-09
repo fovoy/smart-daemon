@@ -28,7 +28,7 @@
     </settings>
 
     <typeAliases>
-        <typeAlias alias="User" type="com.fovoy.model.User"/>
+        <typeAlias alias="User" type="com.fovoy.daemon.model.User"/>
     </typeAliases>
 
     <mappers>

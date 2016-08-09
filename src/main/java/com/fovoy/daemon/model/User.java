@@ -1,4 +1,4 @@
-package com.fovoy.model;
+package com.fovoy.daemon.model;
 
 public class User {
     private Integer id;

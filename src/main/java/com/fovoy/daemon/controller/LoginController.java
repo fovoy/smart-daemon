@@ -1,8 +1,8 @@
-package com.fovoy.controller;
+package com.fovoy.daemon.controller;
 
 
-import com.fovoy.model.User;
-import com.fovoy.service.IUserService;
+import com.fovoy.daemon.model.User;
+import com.fovoy.daemon.service.IUserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

@@ -1,4 +1,4 @@
-package com.fovoy.common.json;
+package com.fovoy.daemon.common.json;
 
 import org.codehaus.jackson.JsonParser;
 import org.codehaus.jackson.JsonProcessingException;

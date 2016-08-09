@@ -17,7 +17,7 @@
 
 <!-- 只扫描controller层的package,创建子上下文,扫描范围扩大会创建多余的bean -->
 <context:component-scan base-package="com.fovoy.controller"></context:component-scan>
-	<bean id="objectMapper" class="com.fovoy.common.util.GlobalJsonUtils"
+	<bean id="objectMapper" class="com.fovoy.daemon.common.util.GlobalJsonUtils"
 		  factory-method="getObjectMapperInstance" />
 	<mvc:default-servlet-handler />
 </beans>

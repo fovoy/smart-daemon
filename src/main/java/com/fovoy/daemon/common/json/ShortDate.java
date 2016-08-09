@@ -1,4 +1,4 @@
-package com.fovoy.common.json;
+package com.fovoy.daemon.common.json;
 
 import java.io.Serializable;
 import java.text.ParseException;

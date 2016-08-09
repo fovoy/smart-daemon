@@ -2,7 +2,7 @@ package com.fovoy.daemon.controller;
 
 
 import com.fovoy.daemon.model.User;
-import com.fovoy.daemon.service.IUserService;
+import com.fovoy.daemon.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,7 +18,7 @@ import javax.annotation.Resource;
 public class LoginController {
 
     @Resource
-    private IUserService userService;
+    private UserService userService;
 
     @RequestMapping(value = "/",method = RequestMethod.GET)
     public String index(){

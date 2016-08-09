@@ -4,7 +4,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import com.fovoy.daemon.model.User;
-import com.fovoy.daemon.service.IUserService;
+import com.fovoy.daemon.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/user")
 public class UserController {
 	@Resource
-	private IUserService userService;
+	private UserService userService;
 	
 	@RequestMapping("/showUser")
 	public String toIndex(HttpServletRequest request,Model model){

@@ -19,6 +19,6 @@
 	<import resource="spring/spring-datasource.xml" />
 	<import resource="spring/spring-mvc.xml"/>
 
-	<context:component-scan base-package="com.fovoy.*" />
+	<context:component-scan base-package="com.fovoy.daemon.*" />
 
 </beans>

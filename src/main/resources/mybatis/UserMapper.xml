@@ -1,38 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.fovoy.daemon.dao.IUserDao" >
-  <resultMap id="BaseResultMap" type="com.fovoy.daemon.model.User" >
-    <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="user_name" property="userName" jdbcType="VARCHAR" />
-    <result column="password" property="password" jdbcType="VARCHAR" />
-    <result column="age" property="age" jdbcType="INTEGER" />
-  </resultMap>
+<mapper namespace="com.fovoy.daemon.dao.UserDao" >
   <sql id="Base_Column_List" >
     id, user_name, password, age
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="selectByPrimaryKey" resultType="User"  >
     select 
     <include refid="Base_Column_List" />
     from user_t
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <select id="selectByUserName" resultMap="BaseResultMap" parameterType="java.lang.String">
+  <select id="selectByUserName" resultType="User">
     select
     <include refid="Base_Column_List"/>
     from user_t
     where user_name = #{userName,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+  <delete id="deleteByPrimaryKey" >
     delete from user_t
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.fovoy.daemon.model.User" >
+  <insert id="insert" >
     insert into user_t (id, user_name, password, 
       age)
     values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{age,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.fovoy.daemon.model.User" >
+  <insert id="insertSelective"  >
     insert into user_t
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -63,7 +57,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.fovoy.daemon.model.User" >
+  <update id="updateByPrimaryKeySelective"  >
     update user_t
     <set >
       <if test="userName != null" >
@@ -78,7 +72,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.fovoy.daemon.model.User" >
+  <update id="updateByPrimaryKey" >
     update user_t
     set user_name = #{userName,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},

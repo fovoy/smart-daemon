@@ -29,6 +29,7 @@
 
     <typeAliases>
         <typeAlias alias="User" type="com.fovoy.daemon.model.User"/>
+        <typeAlias alias="Journal" type="com.fovoy.daemon.model.Journal"/>
     </typeAliases>
 
     <mappers>

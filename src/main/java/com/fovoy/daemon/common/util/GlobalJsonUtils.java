@@ -51,8 +51,6 @@ public class GlobalJsonUtils {
         module.addSerializer(ShortTime.class, new ShortTimeJsonSerializer());
         module.addDeserializer(ShortDate.class, new ShortDateJsonDeserializer());
         module.addSerializer(ShortDate.class, new ShortDateJsonSerializer());
-        module.addSerializer(Date.class, new DateJsonSerializer());
-        module.addDeserializer(Date.class, new DateJsonDeserializer());
         objectMapper.registerModule(module);
     }
 }

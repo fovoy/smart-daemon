@@ -313,7 +313,31 @@
             <version>1.0.5</version>
         </dependency>
     </dependencies>
+    <profiles>
+
+        <profile>
+            <id>zzx</id>
+            <properties>
+                <deploy.type>zzx</deploy.type>
+            </properties>
+        </profile>
+        <profile>
+            <id>james</id>
+            <properties>
+                <deploy.type>james</deploy.type>
+            </properties>
+        </profile>
+
+    </profiles>
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources.${deploy.type}</directory>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
         <finalName>smartdaemon</finalName>
         <plugins>
             <plugin>

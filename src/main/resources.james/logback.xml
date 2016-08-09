@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="LOG_HOME" value="${CATALINA_BASE}/logs"/>
+
+    <appender name="Appender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+        <file>${LOG_HOME}/qta.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/fovoy.log.%d{yyyy-MM-dd}.gz</fileNamePattern>
+            <maxHistory>15</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>[%X{traceId}][%d{HH:mm:ss.SSS}][%p][%logger{0}] %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>WARN</level>
+        </filter>
+        <encoder>
+            <pattern>[%X{traceId}][%d{yyyy/MM/dd HH:mm:ss.SSS}][%p][%logger{0}] %m%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <logger name="com.fovoy.smart" level="INFO">
+        <appender-ref ref="Appender"/>
+    </logger>
+
+    <root level="WARN">
+        <appender-ref ref="console"/>
+    </root>
+
+</configuration>

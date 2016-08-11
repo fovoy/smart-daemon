@@ -28,6 +28,16 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-client</artifactId>
+            <version>9.3.4.RC1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.aliyun.openservices</groupId>
+            <artifactId>ons-client</artifactId>
+            <version>1.1.11</version>
+        </dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.11</version>
@@ -314,7 +324,6 @@
         </dependency>
     </dependencies>
     <profiles>
-
         <profile>
             <id>zzx</id>
             <properties>
@@ -327,7 +336,6 @@
                 <deploy.type>james</deploy.type>
             </properties>
         </profile>
-
     </profiles>
     <build>
         <resources>

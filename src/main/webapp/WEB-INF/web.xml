@@ -33,11 +33,6 @@
 	</listener>
 
 	<!-- Spring MVC servlet -->
-	<servlet-mapping>
-		<servlet-name>default</servlet-name>
-		<url-pattern>*.js</url-pattern>
-		<url-pattern>*.css</url-pattern>
-	</servlet-mapping>
 	<servlet>
 		<servlet-name>springmvc</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -49,21 +44,11 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>springmvc</servlet-name>
-		<url-pattern>/*</url-pattern>
+		<url-pattern>*.api</url-pattern>
 	</servlet-mapping>
-
-	<!--<serrvlet-mybatis>&ndash;&gt;-->
-		<!--<servlet-name>SpringMVC</servlet-name>-->
-		<!--&lt;!&ndash; 此处可以可以配置成*.do，对应struts的后缀习惯 &ndash;&gt;-->
-		<!--<url-pattern>/</url-pattern>-->
-	<!--</servlet-mybatis>-->
 	<welcome-file-list>
-		<welcome-file>pages/showUser.jsp</welcome-file>
+		<welcome-file>page/index.html</welcome-file>
 	</welcome-file-list>
-	<!-- 配置SESSION超时，单位是分钟 -->
-	<session-config>
-		<session-timeout>15</session-timeout>
-	</session-config>
 
 	<servlet>
 		<servlet-name>DruidStatView</servlet-name>

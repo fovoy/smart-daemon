@@ -47,7 +47,7 @@
 		<url-pattern>*.api</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
-		<welcome-file>page/index.html</welcome-file>
+		<welcome-file>page/index/login.html</welcome-file>
 	</welcome-file-list>
 
 	<servlet>

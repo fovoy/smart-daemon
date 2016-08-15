@@ -14,7 +14,7 @@ public interface UserDao {
 
     User selectByPrimaryKey(Integer id);
 
-    User selectByUserName(@Param("username")String userName);
+    User selectByUserName(@Param("userName")String userName);
 
     int updateByPrimaryKeySelective(@Param("record")User record);
 

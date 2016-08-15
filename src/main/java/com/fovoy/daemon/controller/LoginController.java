@@ -33,6 +33,7 @@ public class LoginController {
         System.out.println("User name is：" + userName);
         System.out.println("Password is :" + password);
         User userInDb = userService.getUserByUserName(userName);
+        System.out.println("从数据库中查到的记录的用户名为：" + userInDb.getUserName());
         String passwordInDb = userInDb.getPassword();
         if(password.equals(passwordInDb)){
             return "pages/index/index";

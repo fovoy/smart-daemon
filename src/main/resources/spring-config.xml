@@ -18,6 +18,7 @@
 
 	<import resource="spring/spring-datasource.xml" />
 	<import resource="spring/spring-mvc.xml"/>
+	<import resource="spring/spring-auth.xml"/>
 
 	<context:component-scan base-package="com.fovoy.daemon.*" />
 

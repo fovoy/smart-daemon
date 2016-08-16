@@ -30,6 +30,7 @@ public class AuthFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
         HttpServletResponse httpServletResponse = (HttpServletResponse) response;
+        //不需要验证的URL 直接通过,不验证,例如登录接口
         if (inLoginUri(httpServletRequest)) {
             chain.doFilter(request, response);
         } else {

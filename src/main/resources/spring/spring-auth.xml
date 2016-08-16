@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-autowire="byName" xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 实例化用户过滤器&ndash;&gt;-->
+    <bean id="userFilter" class="com.fovoy.daemon.common.filter.AuthFilter">
+        <property name="includeUrl">
+            <set>
+                <value>/Login/login_submit.api</value>
+            </set>
+        </property>
+    </bean>
+</beans>

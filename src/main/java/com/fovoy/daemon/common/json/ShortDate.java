@@ -25,7 +25,7 @@ public class ShortDate implements Serializable, Comparable<ShortDate> {
         if (str == null) {
             throw new IllegalArgumentException("null string");
         } else if (str.length() != 10) {
-            throw new IllegalArgumentException("QunarDate format must be yyyy-MM-dd: " + str);
+            throw new IllegalArgumentException("Date format must be yyyy-MM-dd: " + str);
         } else {
             int year = Integer.parseInt(str.substring(0, 4));
             int month = Integer.parseInt(str.substring(5, 7));

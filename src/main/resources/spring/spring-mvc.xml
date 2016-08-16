@@ -27,7 +27,18 @@
 		</mvc:message-converters>
 	</mvc:annotation-driven>
 
+	<!--  配置mvc的拦截器 可以配置多个 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<!--  需要被拦截的路径 -->
+			<!--计划url分层处理，例如登录相关处理就是/Login/...., 用户相关就是/User/。。。其他业务逻辑处理采用相应的手段-->
+			<mvc:mapping path="/User/**"/>
+			<!-- 拦截处理的interceptor -->
+			<bean class="com.fovoy.daemon.common.interceptor.UserInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+
 	<!--  ③：对模型视图名称的解析，即在模型视图名称添加前后缀 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-		  p:prefix="/WEB-INF/views/" p:suffix=".jsp"/>
+		  p:prefix="/page/" p:suffix=".jsp"/>
 </beans>

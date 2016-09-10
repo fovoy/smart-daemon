@@ -1,9 +1,11 @@
 package com.fovoy.daemon.service;
 
-import com.fovoy.daemon.model.User;
+import com.fovoy.daemon.model.UserInfo;
 
 public interface UserService {
-    User getUserById(int userId);
+    UserInfo getUserById(int userId);
 
-    User getUserByUserName(String userName);
+    UserInfo getUserByUserName(String userName);
+
+    UserInfo AuthUser(String user,String password);
 }

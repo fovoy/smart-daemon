@@ -58,7 +58,7 @@
 		<!--<url-pattern>*.html</url-pattern>-->
 	</servlet-mapping>
 	<welcome-file-list>
-		<welcome-file>page/index/login.jsp</welcome-file>
+		<welcome-file>page/index</welcome-file>
 	</welcome-file-list>
 
 	<servlet>

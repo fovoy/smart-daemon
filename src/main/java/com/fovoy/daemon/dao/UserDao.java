@@ -1,6 +1,6 @@
 package com.fovoy.daemon.dao;
 
-import com.fovoy.daemon.model.User;
+import com.fovoy.daemon.model.UserInfo;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -8,15 +8,17 @@ import org.springframework.stereotype.Repository;
 public interface UserDao {
     int deleteByPrimaryKey(Integer id);
 
-    int insert(@Param("record")User record);
+    int insert(@Param("record")UserInfo record);
 
-    int insertSelective(@Param("record") User record);
+    int insertSelective(@Param("record") UserInfo record);
 
-    User selectByPrimaryKey(Integer id);
+    UserInfo selectByPrimaryKey(Integer id);
 
-    User selectByUserName(@Param("userName")String userName);
+    UserInfo selectByUserName(@Param("userName")String userName);
 
-    int updateByPrimaryKeySelective(@Param("record")User record);
+    int updateByPrimaryKeySelective(@Param("record")UserInfo record);
 
-    int updateByPrimaryKey(@Param("record")User record);
+    int updateByPrimaryKey(@Param("record")UserInfo record);
+
+    UserInfo authUser(@Param("userId") String userId, @Param("password") String password);
 }

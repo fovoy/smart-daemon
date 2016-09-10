@@ -3,7 +3,7 @@ package com.fovoy.daemon.controller;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
-import com.fovoy.daemon.model.User;
+import com.fovoy.daemon.model.UserInfo;
 import com.fovoy.daemon.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +18,7 @@ public class UserController {
 	@RequestMapping("/showUser")
 	public String toIndex(HttpServletRequest request,Model model){
 		int userId = Integer.parseInt(request.getParameter("id"));
-		User user = this.userService.getUserById(userId);
+		UserInfo user = this.userService.getUserById(userId);
 		model.addAttribute("user", user);
 		return "showUser";
 	}

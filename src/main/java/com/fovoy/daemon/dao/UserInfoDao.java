@@ -5,7 +5,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserDao {
+public interface UserInfoDao {
     int deleteByPrimaryKey(Integer id);
 
     int insert(@Param("record")UserInfo record);

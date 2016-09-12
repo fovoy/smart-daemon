@@ -4,10 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- 实例化用户过滤器&ndash;&gt;-->
-    <bean id="userFilter" class="com.fovoy.daemon.common.filter.AuthFilter">
+    <bean id="userFilter" class="com.fovoy.daemon.common.filter.UserFilter">
         <property name="includeUrl">
             <set>
-                <value>/Login/login_submit.api</value>
+                <value>/page/login.html</value>
+                <value>/page/assets/*</value>
             </set>
         </property>
     </bean>

@@ -18,9 +18,9 @@ import java.util.Set;
 /**
  * Created by zxz.zhang on 16/8/16.
  */
-public class AuthFilter implements Filter {
+public class UserFilter implements Filter {
 
-    private static final Logger logger = LoggerFactory.getLogger(AuthFilter.class);
+    private static final Logger logger = LoggerFactory.getLogger(UserFilter.class);
     private Set<String> includeUrl = Sets.newHashSet();
 
 
@@ -41,20 +41,21 @@ public class AuthFilter implements Filter {
         String token = CookieUtil.findCookieVal(httpServletRequest, "f_u");
         //不需要验证的URL 直接通过,不验证,例如登录接口
         String URI = httpServletRequest.getRequestURI();
-        if (token == null) {
+        if (this.isExcludedUri(URI)) {
+            chain.doFilter(request, response);
+        } else if (token == null) {
             processAuth(httpServletRequest, httpServletResponse, chain);
-        } else if (this.isExcludedUri(URI)) {
+        } else {
             chain.doFilter(request, response);
         }
-        chain.doFilter(request, response);
     }
 
     private void processAuth(HttpServletRequest request, HttpServletResponse httpServletResponse, FilterChain chain) {
 
         try {
-            if (request.getRequestURI().startsWith("login")) {
+            String URI = request.getRequestURI();
+            if (URI.startsWith("/login")) {
                 long e = System.currentTimeMillis();
-                String URI = request.getRequestURI();
                 UserInfo userInfo = null;
                 //用户验证
                 String user = request.getParameter("user");
@@ -62,13 +63,14 @@ public class AuthFilter implements Filter {
                 String url = request.getParameter("url");
                 userInfo = userService.AuthUser(user, pwd);
                 if (userInfo != null) {
+                    CookieUtil.setCookie(httpServletResponse, "f_u", userInfo.getUserName(), request.getServerName());
                     httpServletResponse.sendRedirect(url);
                 }
             } else {
-                httpServletResponse.sendRedirect("/login");
+                httpServletResponse.sendRedirect("/page/login.html");
             }
         } catch (IOException e) {
-
+            logger.error("processAuth error", e);
         }
     }
 
@@ -79,6 +81,14 @@ public class AuthFilter implements Filter {
 
         if (requestURI != null && getIncludeUrl().contains(requestURI)) {
             return true;
+        }
+        for (String s : getIncludeUrl()) {
+            if (s.endsWith("*")) {
+                String url = s.substring(0, s.length() - 2);
+                if (requestURI.startsWith(url)) {
+                    return true;
+                }
+            }
         }
         return false;
     }

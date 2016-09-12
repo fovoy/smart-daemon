@@ -28,7 +28,7 @@
     </settings>
 
     <typeAliases>
-        <typeAlias alias="User" type="com.fovoy.daemon.model.User"/>
+        <typeAlias alias="UserInfo" type="com.fovoy.daemon.model.UserInfo"/>
         <typeAlias alias="Journal" type="com.fovoy.daemon.model.Journal"/>
     </typeAliases>
 

@@ -12,10 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import java.net.URLDecoder;
 
 /**
  * Created by james on 16/1/24.
@@ -53,7 +49,7 @@ public class LoginController {
     private UserService userService;
 
     @RequestMapping(value = "/login_submit", method = RequestMethod.GET)
-    public ModelAndView login(String redirectURL, HttpServletRequest request) {
+    public ModelAndView login(String redirectURL) {
         ModelAndView view = new ModelAndView();
         //将拦截前的路径保存下来，用户登录成功后可以直接请求道登录前的页面
         view.addObject("redirectURL", redirectURL);

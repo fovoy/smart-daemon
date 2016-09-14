@@ -12,7 +12,7 @@
 
 	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
 
-	<bean id="objectMapper" class="com.fovoy.daemon.common.util.JsonUtils"
+	<bean id="objectMapper" class="com.fovoy.daemon.common.utils.JsonUtils"
 		  factory-method="getObjectMapperInstance"/>
 
 	<!-- 添加注解驱动 -->

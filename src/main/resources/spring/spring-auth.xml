@@ -7,8 +7,9 @@
     <bean id="userFilter" class="com.fovoy.daemon.common.filter.UserFilter">
         <property name="includeUrl">
             <set>
-                <value>/page/login.html</value>
-                <value>/page/assets/*</value>
+                <value>/assets/*</value>
+                <value>/js/*</value>
+                <value>/login.html</value>
             </set>
         </property>
     </bean>

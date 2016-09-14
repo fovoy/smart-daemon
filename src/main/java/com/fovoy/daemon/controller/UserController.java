@@ -1,7 +1,6 @@
 package com.fovoy.daemon.controller;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 
 import com.fovoy.daemon.model.UserInfo;
 import com.fovoy.daemon.service.UserService;
@@ -16,10 +15,7 @@ public class UserController {
 	private UserService userService;
 	
 	@RequestMapping("/showUser")
-	public String toIndex(HttpServletRequest request,Model model){
-		int userId = Integer.parseInt(request.getParameter("id"));
-		UserInfo user = this.userService.getUserById(userId);
-		model.addAttribute("user", user);
+	public String toIndex(String userId){
 		return "showUser";
 	}
 }
